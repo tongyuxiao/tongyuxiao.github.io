@@ -64,6 +64,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-4月9日wp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/06/4%E6%9C%889%E6%97%A5wp/" class="article-date">
+  <time datetime="2023-04-06T10:00:02.000Z" itemprop="datePublished">2023-04-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/06/4%E6%9C%889%E6%97%A5wp/">4月9日wp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-ctfshowweb1-签到题"><a href="#1-ctfshowweb1-签到题" class="headerlink" title="1.ctfshowweb1 签到题"></a>1.ctfshowweb1 签到题</h1><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20144418.png" alt="屏幕截图 2023-04-08 144418"></p>
+<p>随便先点开F12，试一试有什么发现<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20144712.png" alt="屏幕截图 2023-04-08 144712"></p>
+<p>看到了base64编码，拿去解密一下。<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20144752.png" alt="屏幕截图 2023-04-08 144752"></p>
+<p>得到flag。</p>
+<h2 id="2-buueasysql"><a href="#2-buueasysql" class="headerlink" title="2.buueasysql"></a>2.buueasysql</h2><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20150515.png" alt="屏幕截图 2023-04-08 150515"></p>
+<p>典型的sql注入，使用一下万能密码</p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20150525.png" alt="屏幕截图 2023-04-08 150525"></p>
+<p>直接得到flag<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20150532.png" alt="屏幕截图 2023-04-08 150532"></p>
+<h2 id="3-buuhavefun"><a href="#3-buuhavefun" class="headerlink" title="3.buuhavefun"></a>3.buuhavefun</h2><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-30%20220159.png" alt="屏幕截图 2023-03-30 220159"></p>
+<p>打开之后看到一张图，之后按F12去查看源码，发现了东西，进行代码审计<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20150943.png" alt="屏幕截图 2023-04-08 150943"></p>
+<p>直接在url后面加上/？cat=dog，发现flag<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20151110.png" alt="屏幕截图 2023-04-08 151110"></p>
+<h2 id="4-buu常见的收集"><a href="#4-buu常见的收集" class="headerlink" title="4.buu常见的收集"></a>4.buu常见的收集<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20155536.png" alt="屏幕截图 2023-04-08 155536"></h2><p>打开之后按F12，什么也没发现，之后对网站用dirsearch进行目录扫描<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20154703.png" alt="屏幕截图 2023-04-08 154703"></p>
+<p>发现四个不同的的，然后把他们放到url后面。先放robots.txt<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20153802.png" alt="屏幕截图 2023-04-08 153802"></p>
+<p>接着去放/flag1_is_her3_fun.txt<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20154741.png" alt="屏幕截图 2023-04-08 154741"></p>
+<p>然后接着放/index.php~<img src="../imgs/$%7Bfiilename%7D/image-20230408160100718.png" alt="image-20230408160100718"></p>
+<p>接着放/index.php/login,发现什么也没有。<img src="../imgs/$%7Bfiilename%7D/image-20230408160156580.png" alt="image-20230408160156580"></p>
+<p>最后放一下.index.php.swp，下载一个文件，用记事本打开。<img src="../imgs/$%7Bfiilename%7D/image-20230408160605640.png" alt="image-20230408160605640"><img src="../imgs/$%7Bfiilename%7D/image-20230408160600942.png" alt="image-20230408160600942"></p>
+<p>一共有三个flag，进行拼接一下。n1book{info_1s_v3ry_imp0rtant_hack}</p>
+<h1 id="5-Include"><a href="#5-Include" class="headerlink" title="5.Include"></a>5.Include<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20171824.png" alt="屏幕截图 2023-04-08 171824"></h1><p>点一下tips就变成<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20171857.png" alt="屏幕截图 2023-04-08 171857"></p>
+<p>/?file=php://filter/convert.base64-encode/resource=flag.php直接获得flag.php的base64<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20171729.png" alt="屏幕截图 2023-04-08 171729"></p>
+<p>之后解密得到flag<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-08%20172033.png" alt="屏幕截图 2023-04-08 172033"></p>
+<h1 id="6-web3"><a href="#6-web3" class="headerlink" title="6.web3"></a>6.web3</h1><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20173916.png" alt="屏幕截图 2023-04-11 173916"></p>
+<p>用burpsuite抓包得到地址，在url后加入/?url=php://input得到</p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20173935-1681206286594-5.png" alt="屏幕截图 2023-04-11 173935"></p>
+<p>根据提示这里需要传参。在maxhackbar中post<?php system('ls');?>可得</p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20174549.png" alt="屏幕截图 2023-04-11 174549"></p>
+<p>接着根据提示传入<?php system("cat ctf_go_go_go");?></p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20174018-1681206455181-8.png" alt="屏幕截图 2023-04-11 174018"></p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20174027-1681206468979-12.png" alt="屏幕截图 2023-04-11 174027"></p>
+<p>得到flag。</p>
+<h1 id="7-ctfshowweb9"><a href="#7-ctfshowweb9" class="headerlink" title="7.ctfshowweb9"></a>7.ctfshowweb9</h1><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20175547.png" alt="屏幕截图 2023-04-11 175547"></p>
+<p>打开题目需要我们去输入密码登录。<img src="D:/%E6%96%87%E4%BB%B6/TYctf/%E8%A7%A3%E9%A2%98%E5%9B%BE%E7%89%87/ctfshow/web9/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20175502.png" alt="屏幕截图 2023-04-11 175502"></p>
+<p>这边百度到ffifdyop：md5的万能密码，直接输入进去得到flag<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20175509-1681207085455-26.png" alt="屏幕截图 2023-04-11 175509"></p>
+<h1 id="8-web2-c0me-t0-s1gn"><a href="#8-web2-c0me-t0-s1gn" class="headerlink" title="8.web2 c0me_t0_s1gn"></a>8.web2 c0me_t0_s1gn</h1><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20181958.png" alt="屏幕截图 2023-04-11 181958"></p>
+<p>打开题目<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20181436.png" alt="屏幕截图 2023-04-11 181436"></p>
+<p>按一下F12发现东西。<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20181504.png" alt="屏幕截图 2023-04-11 181504"></p>
+<p>得到前部分flag，根据提示看控制台。<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20181510.png" alt="屏幕截图 2023-04-11 181510"></p>
+<p>接着输入g1ve_flag()得到后部分flag<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20181646.png" alt="屏幕截图 2023-04-11 181646"></p>
+<h2 id="9-TapTapTap"><a href="#9-TapTapTap" class="headerlink" title="9.TapTapTap"></a>9.TapTapTap</h2><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20183402.png" alt="屏幕截图 2023-04-11 183402"></p>
+<p>打开一看是游戏题。<img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20183359.png" alt="屏幕截图 2023-04-11 183359"></p>
+<p>发现不会玩。看一下源码。</p>
+<p>游戏题，查看源码，大部分游戏题都藏在js中。在/js/habibiScript.js找到</p>
+<p><img src="../imgs/$%7Bfiilename%7D/5e293fb741bc4f85ae0442a7800ea2b5.png" alt="5e293fb741bc4f85ae0442a7800ea2b5"></p>
+<p>发现这串代码像base64.<img src="../imgs/$%7Bfiilename%7D/47e8319af0644539ae6fa6acec9a6f6f.png" alt="47e8319af0644539ae6fa6acec9a6f6f"></p>
+<p>访问链接得到falg。</p>
+<h2 id="10-无一幸免"><a href="#10-无一幸免" class="headerlink" title="10.无一幸免"></a>10.无一幸免</h2><p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20184121.png" alt="屏幕截图 2023-04-11 184121"></p>
+<p>打开链接，进行一下代码审计。</p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20184118.png" alt="屏幕截图 2023-04-11 184118"></p>
+<p>简单的使用数组整型溢出绕过赋值式“永真”判断：官方pyload:?0=214748364</p>
+<p>直接<code>?0=</code>就出了</p>
+<p><img src="../imgs/$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-04-11%20184221.png" alt="屏幕截图 2023-04-11 184221"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/06/4%E6%9C%889%E6%97%A5wp/" data-id="clgc4z6id0000c8dr9wzs4voe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-4月2日wp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/04/01/4%E6%9C%882%E6%97%A5wp/" class="article-date">
@@ -228,6 +315,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/04/06/4%E6%9C%889%E6%97%A5wp/">4月9日wp</a>
+          </li>
         
           <li>
             <a href="/2023/04/01/4%E6%9C%882%E6%97%A5wp/">wp</a>
